@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy · Applicant Online / Довталаб Онлайн</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f6f9fc 0%, #edf2f7 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        /* gradient header card */
+        .hero {
+            background: linear-gradient(135deg, #0b3b3f, #1c6e6b, #2b8c7a);
+            border-radius: 2.5rem;
+            padding: 2rem 2rem 2rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 32, 32, 0.25);
+            transition: all 0.2s ease;
+            color: white;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+
+        .app-icon {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            box-shadow: 0 8px 14px rgba(0,0,0,0.1);
+            font-family: monospace;
+        }
+
+        .app-names {
+            flex: 1;
+        }
+
+        .app-name-main {
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .app-sub {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .privacy-badge {
+            font-size: 1rem;
+            font-weight: 500;
+            background: rgba(255,255,240,0.2);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+        }
+
+        /* language switcher */
+        .lang-switch {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            margin-bottom: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            color: #1e4a5f;
+            backdrop-filter: blur(2px);
+        }
+
+        .lang-btn.active {
+            background: #1f6e6b;
+            color: white;
+            box-shadow: 0 6px 14px rgba(28,110,107,0.3);
+            transform: scale(0.98);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #e9f0f3;
+            transform: translateY(-2px);
+        }
+
+        /* policy cards */
+        .policy-card {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(0px);
+            border-radius: 2rem;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 1.6rem;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0,0,0,0.02);
+            transition: all 0.25s;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .policy-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .policy-card h2 {
+            font-size: 1.65rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(120deg, #16635e, #23967e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.2px;
+            display: inline-block;
+            border-left: 5px solid #2b8c7a;
+            padding-left: 1rem;
+        }
+
+        .policy-card p, .policy-card li {
+            color: #2c3f44;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-card ul {
+            margin-left: 1.6rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .policy-card li {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight-box {
+            background: #eef7f5;
+            border-left: 5px solid #1c6e6b;
+            padding: 1rem 1.5rem;
+            border-radius: 1.5rem;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #cbd5e0, transparent);
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 1.8rem 0.5rem 0.8rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            font-size: 0.85rem;
+            color: #4a6a72;
+        }
+
+        /* responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.2rem 1rem 2rem;
+            }
+            .hero {
+                padding: 1.5rem;
+            }
+            .app-name-main {
+                font-size: 1.3rem;
+            }
+            .policy-card {
+                padding: 1.2rem;
+            }
+            .policy-card h2 {
+                font-size: 1.4rem;
+            }
+            .lang-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.25s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- language switcher: modern pill buttons -->
+    <div class="lang-switch">
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+        <button class="lang-btn" data-lang="tg">🇹🇯 Тоҷикӣ</button>
+    </div>
+
+    <!-- hero header -->
+    <div class="hero">
+        <div class="logo-area">
+            <div class="app-icon">📘</div>
+            <div class="app-names">
+                <div class="app-name-main">Довталаб Онлайн · Абитуриент Онлайн · Applicant Online</div>
+                <div class="app-sub">
+                    <span>📚 EGE | ОГЭ | SAT</span>
+                    <span>✨ 100% private</span>
+                </div>
+            </div>
+        </div>
+        <div class="privacy-badge" id="policyHeaderBadge">🔒 Privacy Policy | Политика конфиденциальности | Сиёсати махфият</div>
+    </div>
+
+    <!-- dynamic content injected via js -->
+    <div id="policyContent" class="policy-content"></div>
+
+    <footer>
+        © 2026 Довталаб Онлайн / Applicant Online — All rights reserved.<br>
+        <span style="font-size:0.75rem; opacity:0.7;">Respecting your privacy, no personal data ever collected.</span>
+    </footer>
+</div>
+
+<script>
+    // language data: English, Russian, Tajik
+    const translations = {
+        en: {
+            sections: [
+                {
+                    title: "Introduction",
+                    content: `<p><strong>Applicant Online ("Dovtalab Online", "Абитуриент Онлайн")</strong> is an educational test preparation application for exams including EGE, OGE, SAT, and various academic tests. Your privacy is our highest priority. This Privacy Policy explains that <strong>we do not collect, store, share, or process any personal information</strong> from our users.</p>
+                    <div class="highlight-box">✅ We respect your privacy. Dovtalab Online does NOT collect, store, or share any personal information.</div>
+                    <p>The app does NOT require registration, login, or any form of user identification. You can use all features completely anonymously.</p>`
+                },
+                {
+                    title: "Information We Do Not Collect",
+                    content: `<p>This application <strong>does not collect any personal data</strong>. Specifically, we never collect:</p>
+                    <ul>
+                        <li>❌ Name</li>
+                        <li>❌ Email address</li>
+                        <li>❌ Phone number</li>
+                        <li>❌ Location (GPS, IP geolocation)</li>
+                        <li>❌ Contacts or address book</li>
+                        <li>❌ Photos or media files</li>
+                        <li>❌ Device identifiers (Android ID, IMEI, advertising ID)</li>
+                        <li>❌ Browsing history or usage analytics</li>
+                        <li>❌ Any personal or sensitive data</li>
+                    </ul>
+                    <p>No registration, no profile creation — your activity stays on your device only.</p>`
+                },
+                {
+                    title: "How We Use Information",
+                    content: `<p>Since we collect <strong>zero personal information</strong>, there is no usage of your personal data. The app works fully offline (once installed) and all test progress, answers, or preferences are stored locally on your device using your phone's internal storage and are never transmitted to any server.</p>
+                    <p>We do not perform any data processing, profiling, or tracking. The sole purpose is to provide exam preparation materials and educational tests locally.</p>`
+                },
+                {
+                    title: "Third Party Services",
+                    content: `<p>Our app does not integrate any third-party analytics, crash reporting, advertising SDKs, or tracking frameworks. No Google Analytics, Firebase, Facebook, or similar services are embedded. <strong>Absolutely no data sharing</strong> with external parties.</p>
+                    <p>If future updates include open-source libraries, they will be strictly offline and privacy-respecting. You will be notified via updated privacy policy.</p>`
+                },
+                {
+                    title: "Children's Privacy",
+                    content: `<p>The educational app is suitable for users of all ages, including teenagers preparing for EGE, OGE, or SAT. We do not knowingly collect personal information from anyone, regardless of age. Since we collect nothing, there are no risks regarding children's data. Parents can be confident that no personal data is ever requested, stored, or shared.</p>`
+                },
+                {
+                    title: "Data Security",
+                    content: `<p>Because we do not store any personal data on our servers, there is no risk of data breach or unauthorized access to your information. Any local test data remains exclusively on your Android device. We recommend you keep your device secure with standard operating system protections.</p>`
+                },
+                {
+                    title: "Changes to Privacy Policy",
+                    content: `<p>We may update this privacy policy occasionally to reflect clarifications or legal requirements. Any changes will be posted within the app and on this page. The “effective date” at the bottom will be revised. We encourage you to review this page periodically. Continued use of the app means acceptance of any revised policy, but rest assured: we will <strong>never</strong> introduce data collection without prominent notice and consent.</p>`
+                },
+                {
+                    title: "Contact Information",
+                    content: `<p>If you have any questions about our privacy practices or this policy (even though we collect nothing), feel free to contact us:</p>
+                    <p>📧 Email: <strong>privacy@dovtalabonline.com</strong> (placeholder for support)<br>
+                    🌐 Website: Dovtalab Online support page<br>
+                    📬 Mailing address: Dushanbe / Moscow (educational project)</p>
+                    <p>We are committed to your privacy and will respond as soon as possible.</p>`
+                }
+            ],
+            footerNote: "© 2026 Dovtalab Online · Zero data collection guarantee"
+        },
+        ru: {
+            sections: [
+                {
+                    title: "Введение",
+                    content: `<p><strong>Applicant Online ("Довталаб Онлайн", "Абитуриент Онлайн")</strong> — это образовательное приложение для подготовки к экзаменам ЕГЭ, ОГЭ, SAT и другим тестам. Ваша конфиденциальность — наш главный приоритет. Данная Политика конфиденциальности разъясняет, что <strong>мы не собираем, не храним, не передаём и не обрабатываем никакую личную информацию</strong> пользователей.</p>
+                    <div class="highlight-box">✅ Мы уважаем вашу приватность. Довталаб Онлайн НЕ собирает, не хранит и не передаёт личные данные.</div>
+                    <p>Приложение НЕ требует регистрации, входа в систему или каких-либо форм идентификации. Вы можете пользоваться всеми функциями полностью анонимно.</p>`
+                },
+                {
+                    title: "Какую информацию мы НЕ собираем",
+                    content: `<p>Это приложение <strong>не собирает никаких персональных данных</strong>. В частности, мы никогда не запрашиваем:</p>
+                    <ul>
+                        <li>❌ Имя</li>
+                        <li>❌ Адрес электронной почты</li>
+                        <li>❌ Номер телефона</li>
+                        <li>❌ Местоположение (GPS, геолокация по IP)</li>
+                        <li>❌ Контакты или адресную книгу</li>
+                        <li>❌ Фотографии или медиафайлы</li>
+                        <li>❌ Идентификаторы устройства (Android ID, IMEI, рекламный ID)</li>
+                        <li>❌ Историю просмотров или аналитику использования</li>
+                        <li>❌ Любые личные или конфиденциальные данные</li>
+                    </ul>
+                    <p>Без регистрации и создания профиля — вся ваша активность остаётся только на вашем устройстве.</p>`
+                },
+                {
+                    title: "Как мы используем информацию",
+                    content: `<p>Поскольку мы <strong>не собираем никакой личной информации</strong>, использование ваших данных отсутствует. Приложение работает полностью офлайн (после установки), весь прогресс тестов, ответы и настройки хранятся локально на вашем устройстве и никогда не передаются на сервер.</p>
+                    <p>Мы не производим обработку данных, профилирование или отслеживание. Единственная цель — предоставить учебные материалы и тесты локально.</p>`
+                },
+                {
+                    title: "Сторонние сервисы",
+                    content: `<p>Наше приложение не содержит сторонних аналитических SDK, отслеживания ошибок, рекламных фреймворков или трекеров. Никакой аналитики Google, Firebase, Facebook и подобных сервисов. <strong>Абсолютно никакого обмена данными с внешними сторонами</strong>.</p>
+                    <p>Если будущие обновления будут включать библиотеки с открытым исходным кодом, они будут строго офлайн и с уважением к конфиденциальности. Вы будете уведомлены через обновлённую политику.</p>`
+                },
+                {
+                    title: "Конфиденциальность детей",
+                    content: `<p>Образовательное приложение подходит для пользователей всех возрастов, включая подростков, готовящихся к ЕГЭ, ОГЭ или SAT. Мы сознательно не собираем личную информацию ни от кого, независимо от возраста. Поскольку мы ничего не собираем, риски в отношении детских данных отсутствуют. Родители могут быть уверены, что личные данные никогда не запрашиваются, не хранятся и не передаются.</p>`
+                },
+                {
+                    title: "Безопасность данных",
+                    content: `<p>Поскольку мы не храним личные данные на наших серверах, риск утечки данных или несанкционированного доступа к вашей информации отсутствует. Любые локальные тестовые данные остаются исключительно на вашем Android-устройстве. Рекомендуем обеспечивать безопасность устройства с помощью стандартных защитных механизмов ОС.</p>`
+                },
+                {
+                    title: "Изменения в Политике конфиденциальности",
+                    content: `<p>Мы можем время от времени обновлять эту политику конфиденциальности для уточнения или соответствия законодательству. Любые изменения будут опубликованы в приложении и на этой странице. Дата вступления в силу будет пересмотрена. Мы рекомендуем периодически просматривать эту страницу. Продолжение использования приложения означает принятие пересмотренной политики, но будьте уверены: мы <strong>никогда</strong> не введём сбор данных без заметного уведомления и согласия.</p>`
+                },
+                {
+                    title: "Контактная информация",
+                    content: `<p>Если у вас есть вопросы о нашей политике конфиденциальности (хотя мы ничего не собираем), свяжитесь с нами:</p>
+                    <p>📧 Эл. почта: <strong>privacy@dovtalabonline.com</strong><br>
+                    🌐 Веб-сайт: страница поддержки Довталаб Онлайн<br>
+                    📬 Адрес: Душанбе / Москва (образовательный проект)</p>
+                    <p>Мы заботимся о вашей конфиденциальности и ответим как можно скорее.</p>`
+                }
+            ]
+        },
+        tg: {
+            sections: [
+                {
+                    title: "Муқаддима",
+                    content: `<p><strong>Довталаб Онлайн (Applicant Online / Абитуриент Онлайн)</strong> — барномаи таълимии омодагӣ ба имтиҳонҳои EGE, OGE, SAT ва дигар санҷишҳо. Махфияти шумо авлавияти мо мебошад. Ин Сиёсати махфият шарҳ медиҳад, ки <strong>мо ҳеҷ гуна маълумоти шахсии корбаронро ҷамъ, нигоҳ, мубодила ё коркард намекунем</strong>.</p>
+                    <div class="highlight-box">✅ Мо ба махфияти шумо эҳтиром мегузорем. Довталаб Онлайн ҳеҷ гуна маълумоти шахсиро ҷамъ, нигоҳ ё мубодила намекунад.</div>
+                    <p>Барнома ба қайдгирӣ, воридшавӣ ё ягон шакли муайянкунии корбар ниёз надорад. Шумо метавонед аз ҳама имкониятҳо пурра номӣ истифода баред.</p>`
+                },
+                {
+                    title: "Маълумоте, ки мо ҶАМЪ намекунем",
+                    content: `<p>Ин барнома <strong>ҳеҷ гуна маълумоти шахсиро ҷамъ намекунад</strong>. Хусусан, мо ҳеҷ гоҳ ҷамъ намекунем:</p>
+                    <ul>
+                        <li>❌ Ном</li>
+                        <li>❌ Суроғаи email</li>
+                        <li>❌ Рақами телефон</li>
+                        <li>❌ Мавқеият (GPS, геолокатсияи IP)</li>
+                        <li>❌ Контактҳо ё дафтарчаи суроғаҳо</li>
+                        <li>❌ Аксҳо ё файлҳои мултимедиа</li>
+                        <li>❌ Идентификаторҳои дастгоҳ (Android ID, IMEI, ID рекламӣ)</li>
+                        <li>❌ Таърихи вебгардиш ё таҳлили истифода</li>
+                        <li>❌ Ҳама гуна маълумоти шахсӣ ё ҳассос</li>
+                    </ul>
+                    <p>Бе бақайдгирӣ ва эҷоди профил — фаъолияти шумо танҳо дар дастгоҳи шумо боқӣ мемонад.</p>`
+                },
+                {
+                    title: "Чӣ гуна мо маълумотро истифода мебарем",
+                    content: `<p>Азбаски мо <strong>ягон маълумоти шахсиро ҷамъ намекунем</strong>, истифодаи маълумоти шумо вуҷуд надорад. Барнома пурра офлайн кор мекунад (пас аз насб), ҳама пешрафтҳои санҷишҳо, ҷавобҳо ё танзимот дар дастгоҳи шумо маҳаллан нигоҳ дошта мешаванд ва ҳеҷ гоҳ ба сервер интиқол дода намешаванд.</p>
+                    <p>Мо ҳеҷ гуна коркарди маълумот, профилсозӣ ё пайгириро анҷом намедиҳем. Танҳо ҳадаф — таъмини маводи омодагӣ ба имтиҳонҳо ва санҷишҳо мебошад.</p>`
+                },
+                {
+                    title: "Хизматҳои тарафи сеюм",
+                    content: `<p>Барномаи мо ҳеҷ гуна SDK-и таҳлилии тарафи сеюм, гузориши хатогиҳо, реклама ё чорчӯбҳои пайгириро дар бар намегирад. Ягон Google Analytics, Firebase, Facebook ва дигар хидматҳо ворид нашудаанд. <strong>Мубодилаи маълумот бо тарафҳои сеюм вуҷуд надорад</strong>.</p>
+                    <p>Агар дар навсозиҳои оянда китобхонаҳои кушодаасос дохил шаванд, онҳо қатъиян офлайн ва ба махфият эҳтиромгузор хоҳанд буд. Тавассути сиёсати навсозӣ огоҳ карда мешавед.</p>`
+                },
+                {
+                    title: "Махфияти кӯдакон",
+                    content: `<p>Барнома барои корбарони ҳама синну сол, аз ҷумла наврасоне, ки ба EGE, OGE ё SAT омодагӣ мебинанд, мувофиқ аст. Мо маълумоти шахсии ҳеҷ касро, новобаста аз синну сол, огоҳона ҷамъ намекунем. Азбаски мо ҳеҷ чиз ҷамъ намекунем, хатар дар мавриди маълумоти кӯдакон вуҷуд надорад. Волидон метавонанд боварӣ дошта бошанд, ки ҳеҷ маълумоти шахсӣ талаб, нигоҳ ё мубодила намешавад.</p>`
+                },
+                {
+                    title: "Амнияти маълумот",
+                    content: `<p>Азбаски мо маълумоти шахсиро дар серверҳои худ нигоҳ намедорем, хатари ихроҷи маълумот ё дастрасии беиҷозат вуҷуд надорад. Ҳама маълумоти санҷишӣ танҳо дар дастгоҳи Android-и шумо боқӣ мемонад. Тавсия медиҳем, ки дастгоҳи худро бо муҳофизатҳои стандартии системаи амалиётӣ эмин нигоҳ доред.</p>`
+                },
+                {
+                    title: "Тағйироти Сиёсати махфият",
+                    content: `<p>Мо метавонем ин сиёсати махфиятро барои равшанӣ ё талаботи ҳуқуқӣ такмил диҳем. Ҳама тағйирот дар барнома ва дар ин саҳифа ҷойгир карда мешаванд. Санаи эътибор аз нав дида мешавад. Ташвиқ мекунем, ки ин саҳифаро давра ба давра баррасӣ кунед. Идомаи истифодаи барнома маънои қабули сиёсати навро дорад, аммо боварӣ дошта бошед, ки мо <strong>ҳеҷ гоҳ</strong> ҷамъоварии маълумотро бе огоҳии назаррас ва ризоият ҷорӣ намекунем.</p>`
+                },
+                {
+                    title: "Маълумоти тамос",
+                    content: `<p>Агар шумо дар бораи сиёсати махфияти мо савол дошта бошед (гарчанде ки мо ҳеҷ чиз ҷамъ намекунем), бо мо тамос гиред:</p>
+                    <p>📧 Email: <strong>privacy@dovtalabonline.com</strong><br>
+                    🌐 Сомона: саҳифаи дастгирии Довталаб Онлайн<br>
+                    📬 Суроға: Душанбе / Маскав (лоиҳаи таълимӣ)</p>
+                    <p>Мо ба махфияти шумо содиқем ва ҳарчи зудтар ҷавоб хоҳем дод.</p>`
+                }
+            ]
+        }
+    };
+
+    let currentLanguage = 'en'; // default
+
+    function renderPolicy(lang) {
+        const data = translations[lang];
+        if (!data) return;
+        const sectionsData = data.sections;
+        const contentDiv = document.getElementById('policyContent');
+        if (!contentDiv) return;
+
+        let html = '';
+        sectionsData.forEach((section, idx) => {
+            html += `
+                <div class="policy-card fade-in" style="animation-delay: ${idx * 0.02}s">
+                    <h2>${section.title}</h2>
+                    ${section.content}
+                </div>
+            `;
+        });
+        contentDiv.innerHTML = html;
+
+        // update active button style
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            const langVal = btn.getAttribute('data-lang');
+            if (langVal === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // update header badge text (optional, small flourish)
+        const badgeSpan = document.getElementById('policyHeaderBadge');
+        if(badgeSpan) {
+            if(lang === 'en') badgeSpan.innerHTML = '🔒 Privacy Policy · Zero personal data';
+            else if(lang === 'ru') badgeSpan.innerHTML = '🔒 Политика конфиденциальности · Никаких личных данных';
+            else badgeSpan.innerHTML = '🔒 Сиёсати махфият · Ҳеҷ гуна маълумоти шахсӣ';
+        }
+    }
+
+    function setLanguage(lang) {
+        if (lang === currentLanguage) return;
+        currentLanguage = lang;
+        renderPolicy(lang);
+        // save preference in localStorage for persistence (offline & revisit)
+        try {
+            localStorage.setItem('app_language_pref', lang);
+        } catch(e) { /* ignore */ }
+    }
+
+    // attach event listeners to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+
+    // load saved preference or default
+    const savedLang = (() => {
+        try {
+            return localStorage.getItem('app_language_pref');
+        } catch(e) { return null; }
+    })();
+    if (savedLang && (savedLang === 'en' || savedLang === 'ru' || savedLang === 'tg')) {
+        currentLanguage = savedLang;
+    } else {
+        currentLanguage = 'en';
+    }
+    renderPolicy(currentLanguage);
+
+    // optional: tiny animation on load
+    document.querySelectorAll('.policy-card').forEach(card => {
+        card.style.opacity = '1';
+    });
+</script>
+</body>
+</html>
