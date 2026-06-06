@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Dovtalab Online - Educational exam preparation app for EGE, OGE, SAT and admission tests. No registration required, privacy-focused.">
+    <meta name="keywords" content="EGE, OGE, SAT, exam preparation, educational app, Dovtalab, Applicant Online, Абитуриент Онлайн">
+    <meta name="author" content="Dovtalab Online">
+    <meta name="theme-color" content="#4f46e5">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dovtalab Online | Applicant Online | Абитуриент Онлайн">
+    <meta property="og:description" content="Prepare for exams with practice tests and learning materials. EGE, OGE, SAT, admission tests.">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial'%3E📘%3C/text%3E%3C/svg%3E">
+    <meta property="og:url" content="https://dovtalab.online">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Dovtalab Online">
+    <meta name="twitter:description" content="Exam preparation app for students. EGE, OGE, SAT and more.">
+    <!-- Favicon placeholder (emoji-based fallback) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial'%3E📘%3C/text%3E%3C/svg%3E">
+    <title>Dovtalab Online | Exam Preparation App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f8fafc 0%, #eef2ff 100%);
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* custom scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #818cf8;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.25rem 1.5rem 2rem;
+        }
+
+        /* navbar / top bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(12px);
+            padding: 0.75rem 1.5rem;
+            border-radius: 80px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .logo-icon {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 6px 12px rgba(79,70,229,0.25);
+        }
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #1e1b4b, #4f46e5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* language switcher */
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255,255,245,0.6);
+            padding: 0.25rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 0.4rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #334155;
+        }
+        .lang-btn.active {
+            background: #4f46e5;
+            color: white;
+            box-shadow: 0 2px 8px rgba(79,70,229,0.3);
+        }
+        .lang-btn:hover:not(.active) {
+            background: #e0e7ff;
+        }
+
+        /* hero glass card */
+        .hero {
+            background: linear-gradient(125deg, rgba(79,70,229,0.08), rgba(124,58,237,0.05));
+            backdrop-filter: blur(2px);
+            border-radius: 3rem;
+            padding: 2.5rem 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .hero-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-icon {
+            font-size: 4.5rem;
+            background: linear-gradient(145deg, #4f46e5, #8b5cf6);
+            width: 100px;
+            height: 100px;
+            border-radius: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 20px 30px -10px rgba(79,70,229,0.4);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e1b4b, #4f46e5, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #334155;
+            max-width: 550px;
+            margin: 1rem auto 1.8rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-primary {
+            background: linear-gradient(100deg, #4f46e5, #7c3aed);
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            box-shadow: 0 10px 18px -6px #4f46e580;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -10px #4f46e5;
+        }
+        .btn-outline {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #cbd5e1;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #1e293b;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-outline:hover {
+            background: white;
+            border-color: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        /* section styles */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            background: linear-gradient(120deg, #1e1b4b, #4f46e5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.7);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background: white;
+            box-shadow: 0 25px 35px -12px rgba(79,70,229,0.2);
+            border-color: rgba(79,70,229,0.2);
+        }
+        .card-icon {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .feature-card p {
+            color: #475569;
+        }
+
+        /* about and privacy cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .info-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+        }
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .info-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .info-list li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .privacy-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #4f46e5;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed #a5b4fc;
+        }
+        .privacy-link:hover {
+            color: #7c3aed;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0.5rem 1rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        @media (max-width: 720px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-sub {
+                font-size: 1rem;
+            }
+            .navbar {
+                border-radius: 40px;
+                padding: 0.6rem 1.2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .btn-primary, .btn-outline {
+                padding: 0.7rem 1.4rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .fade-transition {
+            transition: opacity 0.2s ease;
+        }
+        .hidden-lang {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- navbar with logo & language switcher -->
+    <div class="navbar">
+        <div class="logo-area">
+            <div class="logo-icon">📘</div>
+            <span class="logo-text" id="brandName">Dovtalab Online</span>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ru">Русский</button>
+            <button class="lang-btn" data-lang="tg">Тоҷикӣ</button>
+        </div>
+    </div>
+
+    <!-- HERO section (dynamic) -->
+    <div class="hero" id="heroSection">
+        <!-- content injected via js -->
+    </div>
+
+    <!-- Features section -->
+    <div>
+        <h2 class="section-title" id="featuresTitle">✨ Features</h2>
+        <div class="cards-grid" id="featuresGrid"></div>
+    </div>
+
+    <!-- About + Privacy double card -->
+    <div class="info-grid" id="infoGrid"></div>
+
+    <footer id="footer">
+        <!-- dynamic footer -->
+    </footer>
+</div>
+
+<script>
+    // --------------------------------------------------------------
+    // Multi-language content
+    // --------------------------------------------------------------
+    const langData = {
+        en: {
+            brand: "Applicant Online",
+            hero: {
+                title: "Dovtalab Online",
+                subtitle: "Prepare for exams with practice tests and learning materials.",
+                download: "📱 Download on Google Play",
+                privacyBtn: "🔒 Privacy Policy"
+            },
+            featuresTitle: "✨ Features",
+            features: [
+                { icon: "📝", title: "Practice Tests", desc: "Test your knowledge with educational quizzes." },
+                { icon: "🎯", title: "Exam Preparation", desc: "Prepare for EGE, OGE, SAT and admission exams." },
+                { icon: "📈", title: "Progress", desc: "Improve your skills and track your learning progress." }
+            ],
+            about: {
+                title: "📖 About the App",
+                content: "Dovtalab Online is designed for students and applicants who want to succeed in entrance exams. Gain confidence with structured materials.",
+                points: ["✓ No registration required", "✓ Easy to use", "✓ Purely educational purpose"]
+            },
+            privacy: {
+                title: "🔐 Privacy Commitment",
+                text: "We respect user privacy. Dovtalab Online does not collect, store, or share personal information.",
+                link: "Read full policy →"
+            },
+            footer: "© 2026 Dovtalab Online • Educational application"
+        },
+        ru: {
+            brand: "Абитуриент Онлайн",
+            hero: {
+                title: "Абитуриент Онлайн",
+                subtitle: "Подготовьтесь к экзаменам с помощью тестов и учебных материалов.",
+                download: "📱 Скачать в Google Play",
+                privacyBtn: "🔒 Политика конфиденциальности"
+            },
+            featuresTitle: "✨ Возможности",
+            features: [
+                { icon: "📝", title: "Практические тесты", desc: "Проверяйте знания с помощью учебных тестов." },
+                { icon: "🎯", title: "Подготовка к экзаменам", desc: "Подготовка к ЕГЭ, ОГЭ, SAT и вступительным экзаменам." },
+                { icon: "📈", title: "Прогресс", desc: "Улучшайте знания и следите за прогрессом." }
+            ],
+            about: {
+                title: "📖 О приложении",
+                content: "Абитуриент Онлайн создан для студентов и абитуриентов, которые хотят успешно сдать вступительные испытания. Обретите уверенность с помощью структурированных материалов.",
+                points: ["✓ Регистрация не требуется", "✓ Простота использования", "✓ Исключительно образовательная цель"]
+            },
+            privacy: {
+                title: "🔐 Конфиденциальность",
+                text: "Мы уважаем конфиденциальность пользователей. Абитуриент Онлайн не собирает, не хранит и не передаёт личную информацию.",
+                link: "Читать политику →"
+            },
+            footer: "© 2026 Абитуриент Онлайн • Образовательное приложение"
+        },
+        tg: {
+            brand: "Довталаб Онлайн",
+            hero: {
+                title: "Довталаб Онлайн",
+                subtitle: "Бо тестҳо ва маводҳои таълимӣ ба имтиҳонҳо омода шавед.",
+                download: "📱 Дар Google Play боргирӣ кунед",
+                privacyBtn: "🔒 Сиёсати махфият"
+            },
+            featuresTitle: "✨ Имкониятҳо",
+            features: [
+                { icon: "📝", title: "Тестҳои амалӣ", desc: "Дониши худро бо тестҳои таълимӣ санҷед." },
+                { icon: "🎯", title: "Омодагӣ ба имтиҳон", desc: "Омодагӣ ба ЭГЭ, ОГЭ, SAT ва имтиҳонҳои дохилшавӣ." },
+                { icon: "📈", title: "Пешрафт", desc: "Донишро беҳтар кунед ва пешрафти худро бинед." }
+            ],
+            about: {
+                title: "📖 Дар бораи барнома",
+                content: "Довталаб Онлайн барои донишҷӯён ва довталабоне тарҳрезӣ шудааст, ки мехоҳанд дар имтиҳонҳои дохилшавӣ муваффақ шаванд. Бо маводҳои сохторӣ эътимоди худро афзун кунед.",
+                points: ["✓ Бақайдгирӣ лозим нест", "✓ Истифодаи осон", "✓ Ҳадафи соф таълимӣ"]
+            },
+            privacy: {
+                title: "🔐 Ӯҳдадории махфият",
+                text: "Мо ба махфияти корбар эҳтиром мегузорем. Довталаб Онлайн маълумоти шахсиро ҷамъ, нигоҳ ва мубодила намекунад.",
+                link: "Сиёсати пурра →"
+            },
+            footer: "© 2026 Довталаб Онлайн • Барномаи таълимӣ"
+        }
+    };
+
+    let currentLang = 'en';
+
+    function updatePage(lang) {
+        const data = langData[lang];
+        if (!data) return;
+
+        // brand name in navbar
+        const brandSpan = document.getElementById('brandName');
+        if (brandSpan) brandSpan.textContent = data.brand;
+
+        // Hero section rebuild
+        const heroContainer = document.getElementById('heroSection');
+        heroContainer.innerHTML = `
+            <div class="hero-inner">
+                <div class="hero-icon">📘</div>
+                <h1>${data.hero.title}</h1>
+                <div class="hero-sub">${data.hero.subtitle}</div>
+                <div class="btn-group">
+                    <a href="#" class="btn-primary" id="downloadBtn">${data.hero.download}</a>
+                    <a href="privacy.html" class="btn-outline" id="privacyBtn">${data.hero.privacyBtn}</a>
+                </div>
+            </div>
+        `;
+        // re-attach fake download alert for demo, but button works on real store
+        const downloadBtn = document.getElementById('downloadBtn');
+        if(downloadBtn) {
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("📲 Google Play link: In production, you would be redirected to the official store. The app is coming soon!");
+            });
+        }
+
+        // Features section
+        const featuresGrid = document.getElementById('featuresGrid');
+        featuresGrid.innerHTML = '';
+        data.features.forEach(feat => {
+            const card = document.createElement('div');
+            card.className = 'feature-card';
+            card.innerHTML = `
+                <div class="card-icon">${feat.icon}</div>
+                <h3>${feat.title}</h3>
+                <p>${feat.desc}</p>
+            `;
+            featuresGrid.appendChild(card);
+        });
+
+        // update features title
+        const ftitle = document.getElementById('featuresTitle');
+        if(ftitle) ftitle.textContent = data.featuresTitle;
+
+        // Info grid: about + privacy
+        const infoGrid = document.getElementById('infoGrid');
+        infoGrid.innerHTML = `
+            <div class="info-card">
+                <h3>${data.about.title}</h3>
+                <p>${data.about.content}</p>
+                <ul class="info-list">
+                    ${data.about.points.map(p => `<li>${p}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>${data.privacy.title}</h3>
+                <p>${data.privacy.text}</p>
+                <a href="privacy.html" class="privacy-link">${data.privacy.link}</a>
+            </div>
+        `;
+
+        // Footer
+        const footer = document.getElementById('footer');
+        footer.innerHTML = `${data.footer}<br><span style="font-size:0.75rem;">📘 Prepare smarter, not harder.</span>`;
+
+        // active language button style
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            const btnLang = btn.getAttribute('data-lang');
+            if (btnLang === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // change document lang meta and title
+        document.documentElement.lang = lang === 'tg' ? 'tg' : lang;
+        document.title = data.brand + " | Exam Prep";
+    }
+
+    // language switching with localStorage persistence
+    function setLanguage(lang) {
+        if (lang === currentLang) return;
+        currentLang = lang;
+        updatePage(lang);
+        try {
+            localStorage.setItem('dovtalab_lang_pref', lang);
+        } catch(e) {}
+    }
+
+    // load saved preference
+    const saved = (() => { try { return localStorage.getItem('dovtalab_lang_pref'); } catch(e){ return null; } })();
+    if(saved && (saved === 'en' || saved === 'ru' || saved === 'tg')) {
+        currentLang = saved;
+    } else {
+        // detect browser language approximation? default english
+        currentLang = 'en';
+    }
+
+    // attach event handlers to lang buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const langVal = btn.getAttribute('data-lang');
+            setLanguage(langVal);
+        });
+    });
+
+    // initial render
+    updatePage(currentLang);
+
+    // smooth scroll for any anchor (if needed)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== "#" && href !== "#" && href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // optional: subtle animation on load
+    window.addEventListener('load', () => {
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.2s';
+        document.body.style.opacity = '1';
+    });
+</script>
+</body>
+</html>
