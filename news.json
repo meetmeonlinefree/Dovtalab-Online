@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "title": "Открыта регистрация Довталаб 2026",
+    "description": "Началась регистрация абитуриентов для участия в экзамене.",
+    "image": "https://example.com/news/register.png",
+    "createdAt": "22.06.2026T08:21:00",
+    "status": "active",
+    "priority": "high",
+    "category": "exam",
+    "year": 2026
+  },
+  {
+    "id": "2",
+    "title": "Добавлены новые тесты",
+    "description": "В приложение добавлены новые вопросы по математике.",
+    "image": "https://example.com/news/tests.png",
+    "createdAt": "22.06.2026T10:00:00",
+    "status": "active",
+    "priority": "normal",
+    "category": "update",
+    "year": 2026
+  }
+]
