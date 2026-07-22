@@ -269,7 +269,7 @@ def send_push(
         "message": {
 
             "topic":
-                "dovtalab2026_app",
+                "dovtalab-online_app",
 
 
             "notification": {
