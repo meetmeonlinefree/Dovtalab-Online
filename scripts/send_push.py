@@ -115,7 +115,7 @@ def create_notification(files):
         # Новости приложения
         # ==========================
 
-        elif file == "news.json":
+        elif file == "app_news.json":
 
             data = load_json(file)
 
